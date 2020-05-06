@@ -57,14 +57,14 @@ PureScript is a powerful statically typed functional programming language.
 The static type system of PureScript pairs well with GraphQL since we can enforce that the application code actually returns the data that the API level needs at compile time.
 In comparison, GraphQL.js also checks the values of all leaf types at runtime but for many bugs this might already be to late.
 GraphQL.js also comes with Flow and TypeScript types.
-Unfortunately neither the Flow type system nor the TypeScript type system is strong enough to express the complex raltionships between types in GraphQL schemas.
+Unfortunately neither the Flow type system nor the TypeScript type system is strong enough to express the complex relationships between types in GraphQL schemas.
 This leaves the resolvers untyped.
-The resovlers become a source of errors since implementing resolvers is the bread and butter of GraphQL APIs.
-While there are [effords in the community](https://github.com/graphql-nexus/nexus) to fix this issue with code generation, PureScript GraphQL makes use of PureScripts unique type system (especially row types) to ensure typesafety across the whole codebase.
-In PureScript GraphQL, the types of resolvers are automatically infered from the fields return type and arguments.
+The resolvers become a source of errors since implementing resolvers is the bread and butter of GraphQL APIs.
+While there are [efforts in the community](https://github.com/graphql-nexus/nexus) to fix this issue with code generation, PureScript GraphQL makes use of PureScripts unique type system (especially row types) to ensure typesafety across the whole codebase.
+In PureScript GraphQL, the types of resolvers are automatically inferred from the fields return type and arguments.
 
 While modern async JavaScript is certainly way more fun to write than the infamous callback hell of common ES5, there are still many patterns of functional programming that are helpful when writing the resolvers.
-Attempts of the JavaScript and TypeScript community to bring functional concepts to these languages are admireable but result in dramatic readability tradeoffs.
+Attempts of the JavaScript and TypeScript community to bring functional concepts to these languages are admirable, but result in dramatic readability tradeoffs.
 The simple lack of language features like generalised `do`-notation, auto-currying, a compose operator and pattern matching make the introduced features unattractive and a dedicated library to wrap GraphQL.js (similar to how PureScript v1 wraps GraphQL.js) would be needed to at least remove constant type conversion (e.g. between `null` and `Maybe`).
 PureScript solves this with a compile step and this library now also allows the written PureScript code to make use of even more powerful concepts like monad transformers.
 
